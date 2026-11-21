@@ -221,3 +221,14 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Generated ML outputs
+software/machine_learning/outputs/
+__pycache__/
+*.pyc
+.venv/
+.env
+
+# Private datasets
+data/raw/
+data/private/
