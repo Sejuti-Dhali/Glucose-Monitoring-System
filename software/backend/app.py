@@ -1,4 +1,4 @@
-﻿"""Local HTTP API for simulated optical glucose monitoring.
+"""Local HTTP API for simulated optical glucose monitoring.
 
 This application does NOT communicate with physical hardware.
 It is not intended for clinical use.
@@ -101,8 +101,7 @@ class Handler(BaseHTTPRequestHandler):
             )
             or path.startswith("/media/results/")
         )
-            or (path.startswith("/media/results/") or path == "/media/glucose-hero.png")
-        )
+
 
         if not allowed:
             return self.send_json({"error": "Not found"}, 404)
@@ -150,7 +149,3 @@ class Handler(BaseHTTPRequestHandler):
 if __name__ == "__main__":
     print("Local demo: http://127.0.0.1:8765", flush=True)
     ThreadingHTTPServer(("127.0.0.1", 8765), Handler).serve_forever()
-
-
-
-
