@@ -521,3 +521,253 @@ th { background: var(--pale); }
         grid-template-columns: 1fr;
     }
 }
+
+/* FINAL-SITE-START */
+
+/* FINAL GLUCOSE PROJECT DESIGN */
+:root {
+  --forest: #103D2B;
+  --forest-dark: #08291D;
+  --sage: #C5DDCB;
+  --mint: #E5F0E5;
+  --paper: #F4F8F1;
+  --text: #193D32;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--text);
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.final-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--forest);
+  border-bottom: 1px solid rgba(255,255,255,.12);
+}
+
+.final-header-inner {
+  max-width: 1220px;
+  margin: auto;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+  flex-wrap: wrap;
+}
+
+.final-brand {
+  color: white;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 13px;
+  letter-spacing: .8px;
+}
+
+.final-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.final-nav a {
+  color: #E5F0E5;
+  text-decoration: none;
+  padding: 9px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+}
+
+.final-nav a:hover,
+.final-nav a.active {
+  background: var(--sage);
+  color: var(--forest);
+}
+
+.final-home {
+  background:
+    radial-gradient(circle at 75% 30%, #D2E7CF, transparent 48%),
+    linear-gradient(120deg,#F4F8F1,#E1F0DD);
+}
+
+.final-hero {
+  max-width: 1220px;
+  margin: auto;
+  padding: 75px 24px;
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  align-items: center;
+  gap: 45px;
+}
+
+.final-kicker {
+  color: #456B55;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 800;
+  font-size: 12px;
+}
+
+.final-hero h1 {
+  font-family: Georgia,serif;
+  font-weight: 400;
+  font-size: clamp(42px,5vw,72px);
+  line-height: 1.12;
+  margin: 20px 0;
+  letter-spacing: -1.4px;
+}
+
+.final-lead {
+  color: #456B55;
+  font-size: 17px;
+  line-height: 1.9;
+}
+
+.final-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.final-button {
+  background: var(--forest);
+  color: white;
+  text-decoration: none;
+  padding: 13px 22px;
+  border-radius: 9px;
+  font-weight: 700;
+  font-size: 14px;
+  display: inline-block;
+}
+
+.final-button.secondary {
+  color: var(--forest);
+  background: transparent;
+  border: 1px solid var(--forest);
+}
+
+.final-cover {
+  background: rgba(255,255,255,.65);
+  padding: 14px;
+  border: 1px solid #D7E8D5;
+  border-radius: 22px;
+  box-shadow: 0 24px 65px rgba(16,61,43,.12);
+}
+
+.final-cover img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+}
+
+.final-cover figcaption {
+  color: #456B55;
+  text-align: center;
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+.final-section {
+  background: white;
+  padding: 65px 24px;
+}
+
+.final-section-inner {
+  max-width: 1220px;
+  margin: auto;
+}
+
+.final-section h2 {
+  font-family: Georgia,serif;
+  font-size: clamp(30px,4vw,44px);
+  font-weight: 400;
+  margin: 10px 0 30px;
+}
+
+.final-cards {
+  display: grid;
+  grid-template-columns: repeat(5,minmax(0,1fr));
+  gap: 16px;
+}
+
+.final-card {
+  text-decoration: none;
+  background: #EAF3E8;
+  color: var(--forest);
+  border: 1px solid #D6E6D5;
+  border-radius: 15px;
+  padding: 25px 19px;
+  min-height: 225px;
+  display: flex;
+  flex-direction: column;
+  transition: transform .2s,box-shadow .2s;
+}
+
+.final-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(16,61,43,.12);
+}
+
+.final-card-number {
+  font: bold 25px Georgia,serif;
+  color: #456B55;
+}
+
+.final-card h3 {
+  font-size: 17px;
+  line-height: 1.4;
+  margin: 23px 0 8px;
+}
+
+.final-card p {
+  color: #456B55;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.final-card span:last-child {
+  margin-top: auto;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.final-footer {
+  padding: 30px 24px;
+  background: var(--forest-dark);
+  color: #C5DDCB;
+  text-align: center;
+  font-size: 13px;
+}
+
+@media(max-width:1000px) {
+  .final-cards {
+    grid-template-columns: repeat(3,minmax(0,1fr));
+  }
+}
+
+@media(max-width:760px) {
+  .final-hero {
+    grid-template-columns: 1fr;
+    padding: 45px 24px;
+  }
+
+  .final-cards {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+  }
+}
+
+@media(max-width:480px) {
+  .final-cards {
+    grid-template-columns: 1fr;
+  }
+}
+/* FINAL-SITE-END */
+

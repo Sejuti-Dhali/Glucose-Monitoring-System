@@ -97,7 +97,10 @@ class Handler(BaseHTTPRequestHandler):
                 "/results.html",
                 "/prototype.html",
                 "/style.css",
+                "/media/glucose-hardware-cover.png",
             )
+            or path.startswith("/media/results/")
+        )
             or (path.startswith("/media/results/") or path == "/media/glucose-hero.png")
         )
 
@@ -147,6 +150,7 @@ class Handler(BaseHTTPRequestHandler):
 if __name__ == "__main__":
     print("Local demo: http://127.0.0.1:8765", flush=True)
     ThreadingHTTPServer(("127.0.0.1", 8765), Handler).serve_forever()
+
 
 
 
