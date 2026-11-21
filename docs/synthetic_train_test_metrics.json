@@ -1,0 +1,8 @@
+{
+  "test_r2": 0.9827956327587632,
+  "test_rmse": 7.4232393706044055,
+  "train_samples": 240,
+  "test_samples": 60,
+  "train_cv_r2_mean": 0.985001326571501,
+  "train_cv_r2_std": 0.002958470475154465
+}
