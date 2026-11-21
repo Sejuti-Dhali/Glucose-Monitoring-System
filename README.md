@@ -157,3 +157,32 @@ Arduino/Bluetooth/Android hardware implementation.
 See `docs/end_to_end_demo.md` for architecture,
 testing, and scientific limitations.
 <!-- LOCAL-DEMO-END -->
+
+<!-- MULTIPAGE-WEBSITE-START -->
+
+## Five-Page Project Website
+
+The Forest Green portfolio website includes:
+
+1. **Overview** — research motivation and project scope
+2. **Architecture** — experimental and software workflows
+3. **Optical Sensing** — six wavelength channels
+4. **ML Results** — reported findings and synthetic figures
+5. **Interactive Prototype** — local simulated prediction
+
+All pages share a responsive navigation bar.
+
+### Local interactive preview
+
+Run from the repository root:
+
+```powershell id="1n7gq4"
+.\.venv\Scripts\python.exe software\backend\app.py
+```
+
+Open `http://127.0.0.1:8765`.
+
+The live prototype requires the local backend.
+GitHub Pages serves static files only.
+
+<!-- MULTIPAGE-WEBSITE-END -->

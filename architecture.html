@@ -1,0 +1,126 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Optical glucose monitoring research prototype and machine-learning demonstration.">
+<title>System Architecture | Glucose Monitoring System</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+<div class="container nav-wrap">
+<a class="brand" href="index.html">GLUCOSE MONITORING SYSTEM</a>
+<nav class="nav-links" aria-label="Main navigation">
+<a href="index.html">Overview</a>
+<a href="architecture.html" class="active" aria-current="page">Architecture</a>
+<a href="sensing.html">Optical Sensing</a>
+<a href="results.html">ML Results</a>
+<a href="prototype.html">Interactive Prototype</a>
+</nav>
+</div>
+</header>
+
+<main class="container">
+<div class="hero">
+<div class="eyebrow">02 / System Architecture</div>
+<h1>From optical measurements to model prediction</h1>
+<p class="lead">
+The architecture separates optical acquisition,
+feature processing, machine-learning inference
+and application-level visualization.
+</p>
+</div>
+
+<section>
+<h2>Documented experimental workflow</h2>
+
+<div class="flow">
+<span>Prepared Glucose Solution</span>
+<b>&rarr;</b>
+<span>LED Illumination</span>
+<b>&rarr;</b>
+<span>Phototransistor Response</span>
+<b>&rarr;</b>
+<span>Arduino UNO</span>
+<b>&rarr;</b>
+<span>Absorbance Features</span>
+<b>&rarr;</b>
+<span>Random Forest</span>
+<b>&rarr;</b>
+<span>Glucose Estimate</span>
+</div>
+
+<div class="note">
+This diagram represents the reported conceptual workflow.
+The repository does not claim that the reconstructed
+software has been tested with the original physical device.
+</div>
+</section>
+
+<section>
+<h2>System components</h2>
+
+<div class="grid">
+<div class="card">
+<h3>Hardware</h3>
+<p>
+Arduino UNO, six LEDs, six phototransistors,
+resistors, optical chamber and HC-05 module.
+</p>
+</div>
+
+<div class="card">
+<h3>Machine Learning</h3>
+<p>
+Six absorbance features, Random Forest regression,
+evaluation metrics and SHAP interpretation.
+</p>
+</div>
+
+<div class="card">
+<h3>Application Layer</h3>
+<p>
+The original report describes an OpTose Android application.
+The repository includes a separate simulated browser interface.
+</p>
+</div>
+</div>
+</section>
+
+<section>
+<h2>Implemented software demonstration</h2>
+
+<div class="flow">
+<span>Synthetic CSV</span>
+<b>&rarr;</b>
+<span>Python Random Forest</span>
+<b>&rarr;</b>
+<span>Local HTTP API</span>
+<b>&rarr;</b>
+<span>Browser Interface</span>
+</div>
+
+<p>
+This second pipeline is executable without physical hardware.
+It demonstrates software integration, not clinical validation
+or verified Bluetooth communication.
+</p>
+</section>
+
+<div class="page-nav">
+<a href="index.html">&larr; Overview</a>
+<a href="sensing.html">Optical Sensing &rarr;</a>
+</div>
+</main>
+
+<footer class="site-footer">
+<div class="container">
+AI-Driven Glucose Monitoring System · Biomedical Engineering<br>
+Research and software demonstration only · Not for clinical use
+</div>
+</footer>
+
+</body>
+</html>

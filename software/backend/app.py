@@ -89,8 +89,15 @@ class Handler(BaseHTTPRequestHandler):
 
         # Only serve selected public assets.
         allowed = (
-            path == "/index.html" or
-            path.startswith("/media/results/")
+            path in (
+                "/index.html",
+                "/architecture.html",
+                "/sensing.html",
+                "/results.html",
+                "/prototype.html",
+                "/style.css",
+            )
+            or path.startswith("/media/results/")
         )
 
         if not allowed:
@@ -139,3 +146,4 @@ class Handler(BaseHTTPRequestHandler):
 if __name__ == "__main__":
     print("Local demo: http://127.0.0.1:8765", flush=True)
     ThreadingHTTPServer(("127.0.0.1", 8765), Handler).serve_forever()
+

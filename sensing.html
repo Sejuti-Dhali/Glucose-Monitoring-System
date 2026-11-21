@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Optical glucose monitoring research prototype and machine-learning demonstration.">
+<title>Optical Sensing | Glucose Monitoring System</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+<div class="container nav-wrap">
+<a class="brand" href="index.html">GLUCOSE MONITORING SYSTEM</a>
+<nav class="nav-links" aria-label="Main navigation">
+<a href="index.html">Overview</a>
+<a href="architecture.html">Architecture</a>
+<a href="sensing.html" class="active" aria-current="page">Optical Sensing</a>
+<a href="results.html">ML Results</a>
+<a href="prototype.html">Interactive Prototype</a>
+</nav>
+</div>
+</header>
+
+<main class="container">
+<div class="hero">
+<div class="eyebrow">03 / Optical Sensing</div>
+<h1>Six wavelengths, one optical measurement system</h1>
+<p class="lead">
+The documented experimental configuration uses six
+visible-spectrum channels to investigate the optical
+response of prepared glucose solutions.
+</p>
+</div>
+
+<section>
+<h2>Wavelength configuration</h2>
+
+<table>
+<thead>
+<tr><th>Optical Channel</th><th>Nominal Wavelength</th></tr>
+</thead>
+<tbody>
+<tr><td>Violet</td><td>420 nm</td></tr>
+<tr><td>Blue</td><td>460 nm</td></tr>
+<tr><td>Green</td><td>520 nm</td></tr>
+<tr><td>Yellow</td><td>570 nm</td></tr>
+<tr><td>Orange</td><td>610 nm</td></tr>
+<tr><td>Red</td><td>630 nm</td></tr>
+</tbody>
+</table>
+</section>
+
+<section>
+<h2>Measurement methodology</h2>
+
+<div class="grid">
+<div class="card">
+<h3>1. Sample Preparation</h3>
+<p>
+The report describes prepared glucose solutions in
+the 50–250 mg/dL concentration range and GOD-POD reagent.
+</p>
+</div>
+
+<div class="card">
+<h3>2. Optical Acquisition</h3>
+<p>
+LED illumination and phototransistor measurements
+provide channel-specific optical readings.
+</p>
+</div>
+
+<div class="card">
+<h3>3. Feature Extraction</h3>
+<p>
+Optical intensity measurements can be converted
+to absorbance features using suitable reference
+and dark-baseline measurements.
+</p>
+</div>
+</div>
+</section>
+
+<section>
+<h2>Reference firmware</h2>
+<p>
+The repository includes a newly written Arduino sketch
+for sequential six-channel acquisition.
+Its proposed pin mapping must be verified against
+the actual hardware before deployment.
+</p>
+
+<a class="btn"
+href="https://github.com/Sejuti-Dhali/Glucose-Monitoring-System/tree/main/software/arduino">
+View Arduino Code
+</a>
+
+<div class="note">
+The reconstructed software does not establish that
+the optical system can measure glucose in human blood.
+The documented experiments used prepared solutions.
+</div>
+</section>
+
+<div class="page-nav">
+<a href="architecture.html">&larr; Architecture</a>
+<a href="results.html">ML Results &rarr;</a>
+</div>
+</main>
+
+<footer class="site-footer">
+<div class="container">
+AI-Driven Glucose Monitoring System · Biomedical Engineering<br>
+Research and software demonstration only · Not for clinical use
+</div>
+</footer>
+
+</body>
+</html>
