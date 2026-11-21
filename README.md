@@ -1,188 +1,278 @@
-﻿# AI-Driven Glucose Monitoring System
+# AI-Driven Glucose Monitoring System
 
-A biomedical engineering project investigating
-glucose concentration estimation using optical
-sensing and machine learning.
+### Multi-Wavelength Optical Sensing | Machine Learning | Telemedicine
+
+A biomedical engineering research project investigating glucose concentration estimation using multi-wavelength optical measurements, Arduino-based data acquisition, and Random Forest regression.
+
+<p align="center">
+  <img src="media/glucose-hardware-cover.png"
+       alt="Arduino UNO and optical glucose sensing chamber"
+       width="850">
+</p>
+
+<p align="center">
+  <em>Conceptual visualization of the proposed optical sensing hardware.</em>
+</p>
+
+<p align="center">
+  <a href="https://sejuti-dhali.github.io/Glucose-Monitoring-System/">
+    <strong>Project Website</strong>
+  </a>
+  &nbsp; | &nbsp;
+  <a href="https://github.com/Sejuti-Dhali/Glucose-Monitoring-System">
+    <strong>GitHub Repository</strong>
+  </a>
+</p>
+
+---
 
 ## Project Overview
 
-The documented experimental system combines:
+This project investigates a multi-wavelength optical sensing approach for glucose concentration estimation. The proposed system integrates an optical measurement chamber, Arduino UNO-based signal acquisition, machine-learning prediction, and a telemedicine-oriented monitoring interface.
 
-- Six-wavelength optical acquisition
-- Arduino UNO
-- LED and phototransistor arrays
-- HC-05 Bluetooth communication
-- Random Forest regression
-- SHAP feature interpretation
-- OpTose Android application
+The original research examined prepared glucose solutions using glucose oxidase–peroxidase (GOD–POD) colorimetric chemistry.
 
-## Wavelengths
+The repository additionally provides reconstructed reference code, simulated sensor readings, and a local software demonstration.
 
-420, 460, 520, 570, 610, and 630 nm.
+## Research Objectives
 
-## Machine Learning
+- Investigate optical responses associated with glucose concentration.
+- Examine six visible-wavelength sensing channels.
+- Estimate glucose concentration using Random Forest regression.
+- Evaluate prediction accuracy and model explainability.
+- Demonstrate a telemedicine-oriented monitoring workflow.
 
-The source report describes a Random Forest
-regressor with:
+## System Architecture
 
-- 150 estimators
-- Maximum depth 8
-- Approximately 80/20 train/test split
-- Five-fold cross-validation
-- MixUp and Gaussian-noise augmentation
+```text
+Prepared Glucose Solution
+          |
+          v
+Multi-Wavelength Optical Sensing
+          |
+          v
+Phototransistor Signal Acquisition
+          |
+          v
+       Arduino UNO
+          |
+          v
+Data Processing and Feature Extraction
+          |
+          v
+Random Forest Glucose Prediction
+          |
+          v
+Monitoring and Visualization Interface
+```
 
-The new reference training script implements
-the documented Random Forest configuration,
-but does not reproduce the unspecified
-augmentation procedure.
+The original project report also describes HC-05 Bluetooth communication and an Android application named OpTose.
 
-## Reported Results
+## Optical Sensing Configuration
 
-| Metric | Reported value |
-|---|---:|
+The proposed system uses six visible-wavelength channels:
+
+| Channel | Wavelength |
+|---|---|
+| 1 | 420 nm |
+| 2 | 460 nm |
+| 3 | 520 nm |
+| 4 | 570 nm |
+| 5 | 610 nm |
+| 6 | 630 nm |
+
+The original experimental methodology describes prepared glucose solutions spanning **50–250 mg/dL**.
+
+These measurements concern prepared solutions, not validated non-invasive measurements from human tissue.
+
+## Machine Learning Methodology
+
+The original study describes a Random Forest regression model with the following configuration:
+
+| Parameter | Configuration |
+|---|---|
+| Algorithm | Random Forest Regressor |
+| Estimators | 150 |
+| Maximum depth | 8 |
+| Training/testing split | 80% / 20% |
+| Cross-validation | Fivefold |
+| Explainability | SHAP |
+
+### Results Reported in the Original Study
+
+| Metric | Reported Value |
+|---|---|
 | Test R-squared | 0.960 |
-| RMSE | 12.511 |
-| Five-fold CV R-squared | 0.928 |
+| Test RMSE | 12.511 mg/dL |
+| Cross-validation R-squared | 0.928 |
 
-These numbers are taken from the project report.
-They are not outputs from the newly written code.
+The 520 nm channel was identified as an influential predictor in the reported analysis.
 
-The report identifies 520 nm as an influential
-wavelength in its feature-importance and SHAP
-analyses.
+**Important:** These results originate from the original research report. They are not independently reproduced using the repository's synthetic demonstration dataset.
+
+## Software Demonstration
+
+The reconstructed implementation includes:
+
+- Arduino reference firmware.
+- Synthetic optical sensor data generation.
+- Data preprocessing and Random Forest training.
+- Prediction and model evaluation.
+- Feature importance and SHAP analysis.
+- Local Python prediction API.
+- Simulated sensor endpoint.
+- Browser-based project website.
+
+The synthetic data and reconstructed code are provided for demonstration and reproducibility of the software workflow; they are not the original experimental measurements or source implementation.
 
 ## Repository Structure
 
 ```text
 Glucose-Monitoring-System/
-  README.md
-  index.html
-  hardware/
-    README.md
-  data/
-    README.md
-  docs/
-    provenance.md
-  software/
-    arduino/
-      glucose_sensor.ino
-    machine_learning/
-      requirements.txt
-      sensor_calibration.py
-      data_preprocessing.py
-      train_model.py
-      shap_analysis.py
-      predict.py
-    android/
-      MainActivity.kt
-      activity_main.xml
+|
+|-- index.html
+|-- overview.html
+|-- architecture.html
+|-- sensing.html
+|-- results.html
+|-- prototype.html
+|-- style.css
+|
+|-- media/
+|   |-- glucose-hardware-cover.png
+|   `-- results/
+|
+|-- data/
+|-- docs/
+|-- hardware/
+|
+`-- software/
+    |-- arduino/
+    |   `-- glucose_sensor.ino
+    |
+    |-- android/
+    |   |-- MainActivity.kt
+    |   `-- activity_main.xml
+    |
+    |-- machine_learning/
+    |   |-- requirements.txt
+    |   |-- generate_demo_data.py
+    |   |-- data_preprocessing.py
+    |   |-- train_model.py
+    |   |-- shap_analysis.py
+    |   `-- predict.py
+    |
+    `-- backend/
+        |-- app.py
+        `-- test_integration.py
 ```
 
-## Run the Python Reference Pipeline
+## Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/Sejuti-Dhali/Glucose-Monitoring-System.git
+cd Glucose-Monitoring-System
+```
+
+Create a Python virtual environment:
+
+```bash
+python -m venv .venv
+```
+
+Activate it on Windows PowerShell:
 
 ```powershell
-cd software/machine_learning
-
-python -m pip install -r requirements.txt
-
-python train_model.py path/to/measurements.csv
-
-python shap_analysis.py path/to/measurements.csv
-
-python predict.py 0.1 0.2 0.3 0.4 0.5 0.6
+.\.venv\Scripts\Activate.ps1
 ```
 
-The prediction example is a syntax demonstration,
-not a clinically meaningful input.
+Install the required dependencies:
 
-Training requires a real dataset with the
-documented column names.
-
-## Hardware Status
-
-The Arduino firmware is a newly developed
-reference implementation. Proposed pin
-assignments require physical verification.
-
-## Android Status
-
-The Kotlin/XML files illustrate a basic
-interface. They do not constitute a complete
-buildable Android Studio application.
-
-## Provenance
-
-The underlying experimental methodology and
-reported findings originate from the supplied
-May 2026 BME 4232 group project report.
-
-The source code in this repository is a newly
-written reference reconstruction, not the
-original source code from the report.
-
-Repository ownership does not imply sole
-authorship of the underlying group project.
-
-## Limitations
-
-- Original experimental dataset unavailable
-- Original firmware and Android source unavailable
-- Reported results not independently reproduced
-- Proposed pin mapping not hardware-verified
-- No independent clinical validation
-
-**Not intended for diagnosis, insulin dosing,
-or other medical decisions.**
-
-<!-- LOCAL-DEMO-START -->
-## Interactive Local Demonstration
-
-The repository includes a Python HTTP backend
-and browser-based simulated glucose-monitoring UI.
-
-Run from the repository root:
-
-```powershell
-.\.venv\Scripts\python.exe software\backend\app.py
+```bash
+python -m pip install -r software/machine_learning/requirements.txt
 ```
 
-Then open `http://127.0.0.1:8765`.
+## Run the Local Prototype
 
-The public GitHub Pages website displays static
-results; live prediction requires the local backend.
+Start the Python backend:
 
-This is a software simulation, not a verified
-Arduino/Bluetooth/Android hardware implementation.
-
-See `docs/end_to_end_demo.md` for architecture,
-testing, and scientific limitations.
-<!-- LOCAL-DEMO-END -->
-
-<!-- MULTIPAGE-WEBSITE-START -->
-
-## Five-Page Project Website
-
-The Forest Green portfolio website includes:
-
-1. **Overview** — research motivation and project scope
-2. **Architecture** — experimental and software workflows
-3. **Optical Sensing** — six wavelength channels
-4. **ML Results** — reported findings and synthetic figures
-5. **Interactive Prototype** — local simulated prediction
-
-All pages share a responsive navigation bar.
-
-### Local interactive preview
-
-Run from the repository root:
-
-```powershell id="1n7gq4"
-.\.venv\Scripts\python.exe software\backend\app.py
+```bash
+python software/backend/app.py
 ```
 
-Open `http://127.0.0.1:8765`.
+Open the local interface:
 
-The live prototype requires the local backend.
-GitHub Pages serves static files only.
+**http://127.0.0.1:8765/**
 
-<!-- MULTIPAGE-WEBSITE-END -->
+The Python prediction API operates locally. GitHub Pages hosts the static website and does not execute the Python backend.
+
+## Integration Testing
+
+Run:
+
+```bash
+python software/backend/test_integration.py
+```
+
+The most recently verified integration test execution produced:
+
+| Test | Result |
+|---|---|
+| Health endpoint | PASS |
+| Homepage | PASS |
+| Prediction endpoint | PASS |
+| Simulated sensor endpoint | PASS |
+
+**Total: 4 tests passed.**
+
+## Project Website
+
+The website contains six sections:
+
+1. **Home** — Hardware illustration and navigation.
+2. **Overview** — Research motivation and methodology.
+3. **Architecture** — System design and processing workflow.
+4. **Optical Sensing** — Wavelengths and sensing configuration.
+5. **ML Results** — Prediction analysis and explainability.
+6. **Interactive Prototype** — Software demonstration interface.
+
+**Website:** https://sejuti-dhali.github.io/Glucose-Monitoring-System/
+
+## Implementation Status and Limitations
+
+| Component | Status |
+|---|---|
+| Research methodology | Documented |
+| Multi-page website | Implemented locally |
+| Hardware illustration | Integrated |
+| Synthetic ML demonstration | Reconstructed |
+| Python backend | Integration-tested |
+| Physical optical sensing hardware | Not independently verified |
+| Bluetooth hardware communication | Not independently verified |
+| Native Android application | Not independently verified |
+| Clinical validation | Not performed |
+
+The conceptual hardware illustration does not represent photographic evidence of a validated physical prototype.
+
+The reconstructed Android files are reference components, not a verified, buildable Android application.
+
+## Future Work
+
+- Reproduce model evaluation using original experimental measurements.
+- Validate the optical sensing apparatus experimentally.
+- Complete hardware-to-software communication.
+- Develop and test a complete Android application.
+- Evaluate robustness, calibration, and generalization.
+- Conduct appropriate independent validation before considering any medical application.
+
+## Disclaimer
+
+**This project is intended for academic research and software demonstration only. It is not a clinically validated glucose monitoring device and must not be used for diagnosis, treatment, insulin dosing, or medical decision-making.**
+
+---
+
+**Biomedical Engineering | Optical Sensing | Machine Learning | Telemedicine**
+
+**Repository:** https://github.com/Sejuti-Dhali/Glucose-Monitoring-System
