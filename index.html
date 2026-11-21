@@ -3,114 +3,188 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Optical glucose monitoring research prototype and machine-learning demonstration.">
-<title>Overview | Glucose Monitoring System</title>
+<meta name="description"
+content="AI-Driven Glucose Monitoring System: optical sensing, machine learning and biomedical engineering research.">
+
+<title>AI-Driven Glucose Monitoring System</title>
 <link rel="stylesheet" href="style.css">
 </head>
-<body>
+
+<body class="home-page">
 
 <header class="site-header">
 <div class="container nav-wrap">
-<a class="brand" href="index.html">GLUCOSE MONITORING SYSTEM</a>
+
+<a class="brand" href="index.html">
+<span class="brand-symbol">✦</span>
+GLUCOSE MONITORING SYSTEM
+</a>
+
 <nav class="nav-links" aria-label="Main navigation">
-<a href="index.html" class="active" aria-current="page">Overview</a>
+<a class="active" aria-current="page" href="index.html">Home</a>
+<a href="overview.html">Overview</a>
 <a href="architecture.html">Architecture</a>
 <a href="sensing.html">Optical Sensing</a>
 <a href="results.html">ML Results</a>
 <a href="prototype.html">Interactive Prototype</a>
 </nav>
+
 </div>
 </header>
 
-<main class="container">
-<div class="hero">
-<div class="eyebrow">Biomedical Engineering / Research Prototype</div>
-<h1>AI-Driven Glucose Monitoring System</h1>
-<p class="lead">
-An optical sensing and machine-learning research project
-investigating glucose concentration estimation using
-six visible-wavelength channels, Arduino-based acquisition,
-Random Forest regression and explainable AI.
-</p>
-<a class="btn" href="architecture.html">Explore the System &rarr;</a>
+<main>
+
+<section class="landing-hero">
+<div class="container landing-layout">
+
+<div class="landing-copy">
+
+<div class="eyebrow">
+Biomedical Engineering Research Project
 </div>
 
-<section>
-<div class="eyebrow">01 / Project Overview</div>
-<h2>Research at the intersection of optics and AI</h2>
+<h1>
+AI-Driven<br>
+Glucose Monitoring<br>
+System
+</h1>
 
-<div class="grid">
-<div class="card">
-<h3>Optical Measurement</h3>
-<p>
-Six LEDs and phototransistors provide wavelength-specific
-measurements for optical analysis.
-</p>
-</div>
-
-<div class="card">
-<h3>Embedded Acquisition</h3>
-<p>
-The documented prototype uses Arduino UNO and describes
-HC-05 Bluetooth communication.
-</p>
-</div>
-
-<div class="card">
-<h3>Intelligent Prediction</h3>
-<p>
-Random Forest regression estimates glucose concentration;
-SHAP analysis supports model interpretation.
-</p>
-</div>
-</div>
-</section>
-
-<section>
-<div class="eyebrow">Research Scope</div>
-<h2>Experimental methodology and software reconstruction</h2>
-<p>
-The source report investigated prepared glucose solutions
-using a GOD-POD reagent and a multi-wavelength optical setup.
-This repository documents that methodology and provides
-newly written reference software.
+<p class="landing-description">
+An optical sensing and machine-learning research
+platform investigating glucose concentration estimation
+using six visible-wavelength channels, Arduino-based
+acquisition and intelligent prediction.
 </p>
 
-<div class="note">
-<strong>Scientific transparency:</strong>
-The original experimental dataset and source code were not
-supplied. The executable demonstration uses synthetic data.
-The original reported results are presented separately from
-newly generated software demonstration results.
-</div>
-
-<a class="btn" href="results.html">View Research Results &rarr;</a>
-</section>
-
-<section>
-<div class="eyebrow">Repository</div>
-<h2>Explore the implementation</h2>
-<p>
-Arduino reference firmware, Python machine-learning scripts,
-a simulated monitoring API and Android UI reference files
-are organized in the GitHub repository.
-</p>
-<a class="btn"
-href="https://github.com/Sejuti-Dhali/Glucose-Monitoring-System">
-View GitHub Repository
+<div class="landing-actions">
+<a class="btn" href="overview.html">
+Explore the Project &rarr;
 </a>
+
+<a class="btn btn-outline"
+href="https://github.com/Sejuti-Dhali/Glucose-Monitoring-System"
+target="_blank" rel="noopener noreferrer">
+View on GitHub
+</a>
+</div>
+
+<div class="landing-tags">
+<span>Optical Sensing</span>
+<span>Random Forest</span>
+<span>Explainable AI</span>
+</div>
+
+</div>
+
+<div class="landing-visual">
+<img
+src="media/glucose-hero.png"
+alt="Conceptual illustration of Arduino-based optical sensing, glucose prediction and mobile monitoring"
+onerror="this.style.display='none';this.parentElement.classList.add('visual-fallback')">
+<div class="visual-caption">
+Conceptual system visualization
+</div>
+</div>
+
+</div>
 </section>
 
-<div class="page-nav">
-<span></span>
-<a href="architecture.html">Architecture &rarr;</a>
+<section class="landing-sections">
+<div class="container">
+
+<div class="section-intro">
+<div class="eyebrow">Explore the Project</div>
+<h2>Research, engineering and intelligent analysis</h2>
+<p>
+Navigate through the research methodology, optical
+architecture, machine-learning results and interactive
+software demonstration.
+</p>
 </div>
+
+<div class="landing-card-grid">
+
+<a class="landing-card" href="overview.html">
+<div class="landing-card-icon">01</div>
+<h3>Project Overview</h3>
+<p>
+Research motivation, objectives, methodology
+and project scope.
+</p>
+<span>Explore Overview &rarr;</span>
+</a>
+
+<a class="landing-card" href="architecture.html">
+<div class="landing-card-icon">02</div>
+<h3>System Architecture</h3>
+<p>
+System components, processing stages and
+end-to-end workflow.
+</p>
+<span>Explore Architecture &rarr;</span>
+</a>
+
+<a class="landing-card" href="sensing.html">
+<div class="landing-card-icon">03</div>
+<h3>Optical Sensing</h3>
+<p>
+Six-wavelength configuration and optical
+measurement methodology.
+</p>
+<span>Explore Sensing &rarr;</span>
+</a>
+
+<a class="landing-card" href="results.html">
+<div class="landing-card-icon">04</div>
+<h3>Machine Learning Results</h3>
+<p>
+Random Forest performance, prediction
+analysis and explainability.
+</p>
+<span>Explore Results &rarr;</span>
+</a>
+
+<a class="landing-card" href="prototype.html">
+<div class="landing-card-icon">05</div>
+<h3>Interactive Prototype</h3>
+<p>
+Browser-based demonstration of simulated
+glucose prediction.
+</p>
+<span>Open Prototype &rarr;</span>
+</a>
+
+</div>
+</div>
+</section>
+
+<section class="landing-bottom">
+<div class="container">
+<div class="landing-bottom-inner">
+<div>
+<div class="eyebrow">Research Implementation</div>
+<h2>Explore the complete workflow</h2>
+<p>
+From optical acquisition to machine-learning
+prediction and software visualization.
+</p>
+</div>
+<a class="btn" href="architecture.html">
+View System Architecture &rarr;
+</a>
+</div>
+</div>
+</section>
+
 </main>
 
 <footer class="site-footer">
 <div class="container">
-AI-Driven Glucose Monitoring System · Biomedical Engineering<br>
-Research and software demonstration only · Not for clinical use
+AI-Driven Glucose Monitoring System<br>
+Biomedical Engineering · Research and Software Demonstration
+<p class="small">
+Not validated for clinical diagnosis or treatment.
+</p>
 </div>
 </footer>
 

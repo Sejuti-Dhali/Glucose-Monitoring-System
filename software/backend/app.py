@@ -91,13 +91,14 @@ class Handler(BaseHTTPRequestHandler):
         allowed = (
             path in (
                 "/index.html",
+                "/overview.html",
                 "/architecture.html",
                 "/sensing.html",
                 "/results.html",
                 "/prototype.html",
                 "/style.css",
             )
-            or path.startswith("/media/results/")
+            or (path.startswith("/media/results/") or path == "/media/glucose-hero.png")
         )
 
         if not allowed:
@@ -146,4 +147,6 @@ class Handler(BaseHTTPRequestHandler):
 if __name__ == "__main__":
     print("Local demo: http://127.0.0.1:8765", flush=True)
     ThreadingHTTPServer(("127.0.0.1", 8765), Handler).serve_forever()
+
+
 
