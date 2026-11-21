@@ -1,37 +1,20 @@
-﻿# Data
+﻿# Synthetic Demonstration Dataset
 
-The original experimental dataset was not supplied.
+File: `synthetic_glucose_demo.csv`
 
-## Expected CSV format
+This dataset is generated programmatically to demonstrate
+the software workflow.
 
-The reference Python implementation expects:
+- 300 simulated observations
+- Six absorbance features
+- Glucose concentration range: 50-250 mg/dL
+- Fixed random seed: 42
 
-- abs_420
-- abs_460
-- abs_520
-- abs_570
-- abs_610
-- abs_630
-- glucose_mg_dl
+The absorbance relationships and noise are assumed
+for demonstration purposes.
 
-These columns are a new standardized interface,
-not a claim about the original dataset schema.
+This is NOT the original experimental dataset.
 
-No experimental measurements are fabricated.
-
-## Calibration
-
-Convert raw optical readings to absorbance using
-a blank reference and, when available, a dark
-baseline measurement.
-
-The source report describes prepared glucose
-solutions with GOD-POD reagent.
-
-## Data Leakage
-
-Repeated measurements from the same prepared
-sample should be grouped during validation.
-The current reference training script uses
-a random row-level split and should be adapted
-when sample-group identifiers are available.
+Model performance measured on this dataset is
+synthetic benchmark performance and cannot validate
+the physical glucose-monitoring device.
