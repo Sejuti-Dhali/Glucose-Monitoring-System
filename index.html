@@ -257,6 +257,102 @@ It is not a clinically validated blood glucose monitoring device.
 The code presented here is a newly written reference implementation.
 </p>
 </section>
+<!-- LIVE-SIMULATION-START -->
+<section id="live-demo">
+<div class="eyebrow">07 / Interactive Software Prototype</div>
+<h2>Live optical monitoring simulation</h2>
+<p>
+This demonstration streams synthetic optical measurements
+through a local Python inference API. No Arduino,
+Bluetooth device, or patient data is connected.
+</p>
+
+<div class="card">
+<h3>Simulated glucose prediction</h3>
+<div id="demo-status">Checking local backend...</div>
+<div id="demo-value"
+     style="font:48px Georgia,serif;color:#193D32;margin:15px 0">
+     --
+</div>
+<div id="demo-reference"></div>
+<div id="demo-features"
+     style="font-size:13px;color:#456B55;margin-top:12px">
+</div>
+<button id="demo-button" type="button"
+ style="background:#193D32;color:white;border:0;
+ padding:12px 22px;border-radius:8px;cursor:pointer;
+ margin-top:18px">
+ Generate simulated reading
+</button>
+</div>
+
+<h3>Software-generated analysis figures</h3>
+<div class="grid">
+<div class="card">
+<img src="media/results/prediction_scatter.png"
+ alt="Synthetic prediction diagnostic" style="width:100%">
+<p>Fitted-model diagnostic; not an independent test plot.</p>
+</div>
+<div class="card">
+<img src="media/results/residual_plot.png"
+ alt="Synthetic residual diagnostic" style="width:100%">
+<p>Residual analysis on synthetic observations.</p>
+</div>
+<div class="card">
+<img src="media/results/feature_importance.png"
+ alt="Synthetic feature importance" style="width:100%">
+<p>Random Forest importance on simulated data.</p>
+</div>
+</div>
+
+<p><strong>Research limitation:</strong>
+These synthetic demonstrations do not reproduce the
+original experimental findings or establish clinical
+glucose-monitoring accuracy.</p>
+</section>
+
+<script>
+(function () {
+ const status = document.getElementById("demo-status");
+ const value = document.getElementById("demo-value");
+ const reference = document.getElementById("demo-reference");
+ const features = document.getElementById("demo-features");
+ const button = document.getElementById("demo-button");
+
+ async function refresh() {
+   try {
+     const response = await fetch("/api/sample");
+     if (!response.ok) throw new Error("Backend unavailable");
+
+     const data = await response.json();
+
+     status.textContent = "SIMULATED SENSOR STREAM";
+     value.textContent =
+       data.prediction_mg_dl.toFixed(2) + " mg/dL";
+
+     reference.textContent =
+       "Synthetic reference: " +
+       data.reference_mg_dl.toFixed(2) + " mg/dL";
+
+     features.textContent =
+       "Absorbance [420, 460, 520, 570, 610, 630 nm]: " +
+       data.absorbance.map(x => x.toFixed(3)).join(", ");
+
+   } catch (error) {
+     status.textContent =
+       "Local Python backend not running. " +
+       "The published GitHub Pages site shows static results.";
+     value.textContent = "Offline";
+     reference.textContent = "";
+     features.textContent = "";
+   }
+ }
+
+ button.addEventListener("click", refresh);
+ refresh();
+})();
+</script>
+<!-- LIVE-SIMULATION-END -->
 </main>
 </div>
 
@@ -265,3 +361,4 @@ AI-Driven Glucose Monitoring System · Biomedical Engineering
 </footer>
 </body>
 </html>
+

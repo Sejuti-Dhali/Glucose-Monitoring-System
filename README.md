@@ -133,3 +133,27 @@ authorship of the underlying group project.
 
 **Not intended for diagnosis, insulin dosing,
 or other medical decisions.**
+
+<!-- LOCAL-DEMO-START -->
+## Interactive Local Demonstration
+
+The repository includes a Python HTTP backend
+and browser-based simulated glucose-monitoring UI.
+
+Run from the repository root:
+
+```powershell
+.\.venv\Scripts\python.exe software\backend\app.py
+```
+
+Then open `http://127.0.0.1:8765`.
+
+The public GitHub Pages website displays static
+results; live prediction requires the local backend.
+
+This is a software simulation, not a verified
+Arduino/Bluetooth/Android hardware implementation.
+
+See `docs/end_to_end_demo.md` for architecture,
+testing, and scientific limitations.
+<!-- LOCAL-DEMO-END -->
