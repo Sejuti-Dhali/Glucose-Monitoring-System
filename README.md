@@ -276,3 +276,38 @@ The reconstructed Android files are reference components, not a verified, builda
 **Biomedical Engineering | Optical Sensing | Machine Learning | Telemedicine**
 
 **Repository:** https://github.com/Sejuti-Dhali/Glucose-Monitoring-System
+
+
+## Premium Biophilic Website Design
+
+**Visual direction:** Precision Biomedical Analytics
+
+The website uses a nature-inspired design system
+with refined typography, organic shapes, responsive
+layouts, subtle motion, and accessible interaction
+states.
+
+### Design Tokens
+
+| Role | Value |
+|---|---|
+| Primary | `#34483C` |
+| Secondary | `#829681` |
+| Accent | `#B69A72` |
+| Surface | `#FAF7F0` |
+| Pale | `#E9EDE1` |
+
+### Enhancement Architecture
+
+- `biophilic-premium.css`: Independent visual layer
+- `biophilic-premium.js`: Progressive UI enhancement
+- Existing application files: Preserved
+
+The design enhancement does not introduce a backend,
+clinical diagnosis, authentication, or hardware
+integration. Existing project limitations still apply.
+
+### Accessibility
+
+The enhancement includes keyboard focus indicators,
+responsive typography, and reduced-motion support.
